@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  db:
+    image: mongo:3.0
+    restart: unless-stopped
+    container_name: messenger-db
+    ports:
+      - '27017'
+    command:
+      - --smallfiles
+
+  rocketchat:
+    image: rocket.chat
+    restart: unless-stopped
+    container_name: messenger
+    environment:
+      - ROOT_URL=http://127.0.0.1
+      # - MAIL_URL=smtp://
+    ports:
+      - '80:3000'
+    depends_on:
+      - db

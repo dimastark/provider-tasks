@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    restart: unless-stopped
+    container_name: database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+
+  pgadmin:
+    image: thajeztah/pgadmin4
+    restart: unless-stopped
+    container_name: pgadmin
+    volumes:
+      - pgadmin:/pgadmin/
+    ports:
+      - "5050:5050"
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:
+  pgadmin:
