@@ -2,7 +2,7 @@ version: '2'
 
 services:
   db:
-    image: mongo:3.0
+    image: mongo
     restart: unless-stopped
     container_name: messenger-db
     ports:
