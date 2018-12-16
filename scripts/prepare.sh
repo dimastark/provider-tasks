@@ -1,6 +1,5 @@
 docker pull dimastark/orangeforum
 docker pull freeradius/freeradius-server
-docker pull jasonish/suricata
 docker pull kylemanna/openvpn
 docker pull mima84/docker-freepbx
 docker pull mongo
@@ -21,7 +20,6 @@ docker pull dimastark/provider-mail-server
 docker pull dimastark/provider-messenger
 docker pull dimastark/provider-radius
 docker pull dimastark/provider-scada
-docker pull dimastark/provider-suricata
 docker pull dimastark/provider-telephony
 docker pull dimastark/provider-vpn-server
 docker pull dimastark/provider-www

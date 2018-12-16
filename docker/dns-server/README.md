@@ -5,18 +5,12 @@
 # Останавливаем systemd-resolved (освобождаем 53 порт)
 $ sudo systemctl stop systemd-resolved
 # Запускаем DNS сервер
-$ ./scripts/run.sh dns-server -d
+$ ./scripts/run.sh dns-server
 # Открываем https://<ip ВМ>:10000 для первичной настройки (root:password)
-```
-
-## Как смотреть логи
-```sh
-# Смотрим логи DNS сервера
-$ docker logs -f dns-server
 ```
 
 ## Как собрать образ
 ```sh
-$ docker build -t repo/provider-dns-server docker/dns-server
-$ docker push repo/provider-dns-server
+$ docker build -t dimastark/provider-dns-server docker/dns-server
+$ docker push dimastark/provider-dns-server
 ```

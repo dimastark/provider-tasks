@@ -2,19 +2,12 @@
 
 ## Как запускать
 ```sh
+# Устанавливаем все, что нужно
+$ add-apt-repository ppa:oisf/suricata-stable
+$ apt-get update
+$ apt-get install suricata -y
+
 # Запускаем Suricata на интерфейсе чего либо
-$ docker run -it --net=host -v ~/suricata-logs:/var/log/suricata \
-	dimastark/provider-suricata -i <interface>
-```
-
-## Как смотреть логи
-```sh
-# Смотрим логи Suricata
-$ tail -f ~/suricata-logs
-```
-
-## Как собрать образ
-```sh
-$ docker build -t repo/provider-suricata docker/suricata
-$ docker push repo/provider-suricata
+$ suricata -i <интерфейс>
+# Правила содержатся в /var/lib/suricata/rules/suricata.rules
 ```
