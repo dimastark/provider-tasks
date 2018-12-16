@@ -6,7 +6,7 @@
 $ export HOST=<ip ВМ>
 $ export DOMAIN=<ip ВМ или домен>
 # Запускаем Почтовый сервер
-$ ./scripts/run.sh mail-server -e HOST=$HOST -e DOMAIN=$DOMAIN -p 25 -p 143 -p 587 -p 993 -d
+$ ./scripts/run.sh mail-server -e HOST=$HOST -e DOMAIN=$DOMAIN -d
 ```
 
 ## Как смотреть логи

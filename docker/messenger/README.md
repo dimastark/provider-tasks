@@ -3,7 +3,7 @@
 ## Как запускать
 ```sh
 # Запускаем месенджер на 80 порту
-$ ./scripts/run.sh messenger -p 80 -d
+$ ./scripts/run.sh messenger -d
 # Открываем http://<ip ВМ> для первичной настройки
 ```
 

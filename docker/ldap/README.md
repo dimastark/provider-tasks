@@ -3,7 +3,7 @@
 ## Как запускать
 ```sh
 # Запускаем LDAP Server
-$ ./scripts/run.sh ldap -p 689 -p 389 -p 80 -d
+$ ./scripts/run.sh ldap -d
 # Заходим на http://<ip ВМ>:8080 для первичной настройки
 # Логин "cn=admin,dc=provider,dc=ru" Пароль "admin"
 ```
