@@ -3,14 +3,12 @@
 ## Как запускать
 ```sh
 # Запускаем Scada
-docker run -it -e DOCKER_HOST_IP=<ip ВМ> -p 81:8080 \		                dimastark/provider-scada /root/start.sh
-# Можно открывать http://<ip ВМ>:81
+$ ./scripts/run.sh scada -p 80:8080
+# Можно открывать http://<ip ВМ>
 ```
-
-## Как смотреть логи
 
 ## Как собрать образ
 ```sh
-$ docker build -t repo/provider-scada docker/scada
-$ docker push repo/provider-scada
+$ docker build -t dimastark/provider-scada docker/scada
+$ docker push dimastark/provider-scada
 ```
