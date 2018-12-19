@@ -24,7 +24,7 @@ services:
       - DMS_DEBUG=0
       - ENABLE_LDAP=1
       - LDAP_SERVER_HOST=$LDAP_IP
-      - LDAP_SEARCH_BASE=ou=people,dc=localhost,dc=localdomain
+      - LDAP_SEARCH_BASE=ou=people,dc=example,dc=org
       - LDAP_BIND_DN=cn=admin,dc=example,dc=org
       - LDAP_BIND_PW=admin
       - LDAP_QUERY_FILTER_USER=(&(mail=%s)(mailEnabled=TRUE))
@@ -36,9 +36,9 @@ services:
       - ENABLE_SASLAUTHD=1
       - SASLAUTHD_MECHANISMS=ldap
       - SASLAUTHD_LDAP_SERVER=ldap
-      - SASLAUTHD_LDAP_BIND_DN=cn=admin,dc=localhost,dc=localdomain
+      - SASLAUTHD_LDAP_BIND_DN=cn=admin,dc=example,dc=org
       - SASLAUTHD_LDAP_PASSWORD=admin
-      - SASLAUTHD_LDAP_SEARCH_BASE=ou=people,dc=localhost,dc=localdomain
+      - SASLAUTHD_LDAP_SEARCH_BASE=ou=people,dc=example,dc=org
       - POSTMASTER_ADDRESS=postmaster@localhost.localdomain
       - POSTFIX_MESSAGE_SIZE_LIMIT=100000000
     cap_add:

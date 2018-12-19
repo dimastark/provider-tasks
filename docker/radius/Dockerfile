@@ -1,1 +1,0 @@
-FROM freeradius/freeradius-server
