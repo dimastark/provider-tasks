@@ -1,22 +1,9 @@
 version: '2'
 
 services:
-  openldap:
-    image: osixia/openldap
+  ldap:
+    image: osixia/openldap:1.1.8
     container_name: ldap
-    environment:
-      LDAP_TLS: 'true'
-      LDAP_TLS_CRT_FILENAME: 'fullchain.pem'
-      LDAP_TLS_KEY_FILENAME: 'privkey.pem'
-      LDAP_TLS_CA_CRT_FILENAME: 'fullchain.pem'
-      LDAP_ORGANISATION: "SUPER PROVIDER"
-      LDAP_DOMAIN: "provider.ru"
-      LDAP_BASE_DN: "dc=provider,dc=ru"
-      LDAP_ADMIN_PASSWORD: "admin"
-      LDAP_TLS_CIPHER_SUITE: "NORMAL"
-      LDAP_TLS_VERIFY_CLIENT: "allow"
-    tty: true
-    stdin_open: true
     volumes:
       - ldap_data:/var/lib/ldap
       - ldap_slap:/etc/ldap/slapd.d
@@ -24,11 +11,13 @@ services:
     ports:
       - "389:389"
       - "639:639"
-    hostname: "provider.ru"
+    hostname: "ldap"
 
   phpldapadmin:
-    image: osixia/phpldapadmin
+    image: osixia/phpldapadmin:0.7.2
     container_name: phpldapadmin
+    logging:
+      driver: none
     environment:
       - PHPLDAPADMIN_LDAP_HOSTS=ldap
       - PHPLDAPADMIN_HTTPS=false

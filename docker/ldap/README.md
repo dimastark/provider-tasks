@@ -3,21 +3,13 @@
 ## Как запускать
 ```sh
 # Запускаем LDAP Server
-$ ./scripts/run.sh ldap -d
+$ ./scripts/run.sh ldap
 # Заходим на http://<ip ВМ>:8080 для первичной настройки
-# Логин "cn=admin,dc=provider,dc=ru" Пароль "admin"
-```
-
-## Как смотреть логи
-```sh
-# Смотрим логи LDAP сервера
-$ docker logs -f ldap
-# Смотрим логи административного сервера
-$ docker logs -f ldapadmin
+# Логин "cn=admin,dc=example,dc=org" Пароль "admin"
 ```
 
 ## Как собрать образ
 ```sh
-$ docker build -t repo/provider-ldap docker/ldap
-$ docker push repo/provider-ldap
+$ docker build -t dimastark/provider-ldap docker/ldap
+$ docker push dimastark/provider-ldap
 ```
