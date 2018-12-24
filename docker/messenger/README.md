@@ -9,6 +9,6 @@ $ ./scripts/run.sh messenger
 
 ## Как собрать образ
 ```sh
-$ docker build -t dimastark/provider-vpn-server docker/vpn-server
-$ docker push dimastark/provider-vpn-server
+$ docker build -t dimastark/provider-messenger docker/messenger
+$ docker push dimastark/provider-messenger
 ```

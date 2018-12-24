@@ -6,8 +6,8 @@ services:
     restart: unless-stopped
     container_name: www
     environment:
-      - PG_USER=$PG_USER
+      - PG_USER=postgres
       - PG_HOST=$PG_HOST
-      - PG_PASS=$PG_PASS
+      - PG_PASS=postgres
     ports:
       - "80:9123"

@@ -33,6 +33,6 @@ $ ./scripts/command.sh vpn-server openvpn ovpn_revokeclient $CLIENTNAME remove
 
 ## Как собрать образ
 ```sh
-$ docker build -t dimastark/provider-messenger docker/messenger
-$ docker push dimastark/provider-messenger
+$ docker build -t dimastark/provider-vpn-server docker/vpn-server
+$ docker push dimastark/provider-vpn-server
 ```

@@ -1,3 +1,5 @@
-FROM dockergb/scadalts
+FROM dimastark/provider-base
 
-ENV DOCKER_HOST_IP=127.0.0.1
+ENV COMPOSE_PROJECT_NAME scada
+
+ADD ./docker-compose.yml /app/

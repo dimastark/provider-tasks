@@ -16,6 +16,7 @@ services:
     container_name: messenger
     environment:
       - ROOT_URL=http://127.0.0.1
+      # TODO: Соединить с mail-server
       # - MAIL_URL=smtp://
     ports:
       - '80:3000'

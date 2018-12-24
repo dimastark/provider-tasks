@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  scada:
+    image: dockergb/scadalts
+    container_name: scada
+    restart: unless-stopped
+    environment:
+      - DOCKER_HOST_IP=127.0.0.1
+    ports:
+      - "80:8080"

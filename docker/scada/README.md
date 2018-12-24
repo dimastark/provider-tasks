@@ -3,7 +3,7 @@
 ## Как запускать
 ```sh
 # Запускаем Scada
-$ ./scripts/run.sh scada -p 80:8080
+$ ./scripts/run.sh scada
 # Можно открывать http://<ip ВМ>
 ```
 

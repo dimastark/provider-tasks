@@ -4,7 +4,7 @@
 ```sh
 # Запускаем LDAP Server
 $ ./scripts/run.sh ldap
-# Заходим на http://<ip ВМ>:8080 для первичной настройки
+# Заходим на http://<ip ВМ> для первичной настройки
 # Логин "cn=admin,dc=example,dc=org" Пароль "admin"
 ```
 

@@ -1,11 +1,12 @@
 version: '2'
 
+# TODO заставить это работать с LDAP
 services:
-  mail:
+  mail-server:
     image: tvial/docker-mailserver
-    hostname: mail-server
-    domainname: mail.provider.ru
     container_name: mail-server
+    hostname: $HOSTNAME
+    domainname: $DOMAINNAME
     ports:
       - "25:25"
       - "143:143"
@@ -14,7 +15,7 @@ services:
     volumes:
       - maildata:/var/mail
       - mailstate:/var/mail-state
-      - appconfig:/tmp/docker-mailserver/
+      - ~/config/:/tmp/docker-mailserver/
     environment:
       - ENABLE_SPAMASSASSIN=1
       - ENABLE_CLAMAV=1
@@ -48,4 +49,3 @@ services:
 volumes:
   maildata:
   mailstate:
-  appconfig:
