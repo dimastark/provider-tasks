@@ -3,6 +3,7 @@ version: '2'
 services:
   ldap:
     image: osixia/openldap:1.1.8
+    restart: always
     container_name: ldap
     volumes:
       - ldap_data:/var/lib/ldap
@@ -15,6 +16,7 @@ services:
 
   phpldapadmin:
     image: osixia/phpldapadmin:0.7.2
+    restart: always
     container_name: phpldapadmin
     logging:
       driver: none

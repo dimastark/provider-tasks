@@ -1,6 +1,7 @@
 # Messenger
 
 ## Как запускать
+
 ```sh
 # Запускаем месенджер
 $ ./scripts/run.sh messenger
@@ -8,6 +9,7 @@ $ ./scripts/run.sh messenger
 ```
 
 ## Как собрать образ
+
 ```sh
 $ docker build -t dimastark/provider-messenger docker/messenger
 $ docker push dimastark/provider-messenger

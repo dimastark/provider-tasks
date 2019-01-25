@@ -1,6 +1,7 @@
 # Web Server
 
 ## Как запускать
+
 ```sh
 # Запускаем миграции
 $ ./scripts/command.sh www www forum postgres postgres <ip ВМ с БД> -migrate
@@ -9,11 +10,13 @@ $ ./scripts/run.sh www -e PG_HOST=<ip ВМ с БД>
 ```
 
 ## Как создать суперпользователя
+
 ```sh
 $ ./scripts/command.sh www www forum postgres postgres <ip ВМ с БД> -createsuperuser
 ```
 
 ## Как собрать образ
+
 ```sh
 $ docker build -t dimastark/provider-www docker/www
 $ docker push dimastark/provider-www

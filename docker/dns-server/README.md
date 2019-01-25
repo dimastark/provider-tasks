@@ -1,6 +1,7 @@
 # DNS Server
 
 ## Как запускать
+
 ```sh
 # Запускаем DNS сервер
 $ ./scripts/run.sh dns-server
@@ -8,6 +9,7 @@ $ ./scripts/run.sh dns-server
 ```
 
 ## Как собрать образ
+
 ```sh
 $ docker build -t dimastark/provider-dns-server docker/dns-server
 $ docker push dimastark/provider-dns-server

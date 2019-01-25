@@ -1,27 +1,41 @@
 version: '2'
 
 services:
-  freepbx:
-    image: mima84/docker-freepbx
-    container_name: telephony
-
+  freepbx-app:
+    container_name: freepbx-app
+    image: tiredofit/freepbx
     ports:
-    - "5160-5161:5160-5161/udp"
-    - "5060-5060:5060-5060/udp"
-    - "80:8082/tcp"
-    - "8082:8082/tcp"
-    - "10000-10050:10000-10050/udp"
-
+      - 5060:5060/udp
+      - 5160:5160
+      - 18000:20000/udp
+      - 80:80
     volumes:
-      - freepbx-apache:/etc/apache2
-      - freepbx-asterisk-config:/etc/asterisk
-      - freepbx-mysql:/var/lib/mysql
-      - freepbx-asterisk-spool:/var/spool/asterisk
-      - freepbx-asterisk-data:/var/lib/asterisk
+      - ~/certs:/certs
+      - ~/data:/data
+      - ~/logs:/www/logs
+      - ~/data/www:/www/freepbx
+    environment: 
+      - ZABBIX_HOSTNAME=freepbx-app
 
-volumes:
-  freepbx-apache:
-  freepbx-asterisk-config:
-  freepbx-mysql:
-  freepbx-asterisk-spool:
-  freepbx-asterisk-data:
+      - RTP_START=18000
+      - RTP_FINISH=20000
+
+      - DB_HOST=freepbx-db
+      - DB_NAME=asterisk
+      - DB_USER=asterisk
+      - DB_PASS=password
+
+      - DEBUG_MODE=TRUE      
+    restart: always
+
+  freepbx-db:
+    container_name: freepbx-db
+    image: tiredofit/mariadb
+    restart: always
+    volumes:
+      - ~/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=asterisk
+      - MYSQL_USER=asterisk
+      - MYSQL_PASSWORD=password
