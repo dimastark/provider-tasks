@@ -14,6 +14,7 @@
 # Cхема сети
 
 ![image](https://user-images.githubusercontent.com/11780431/50404328-5d332f80-07c8-11e9-8249-fcc1ed7689d6.png)
+![image](scheme.png)
 
 # Как запускать
 ---
