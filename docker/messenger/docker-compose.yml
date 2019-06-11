@@ -15,9 +15,7 @@ services:
     restart: unless-stopped
     container_name: messenger
     environment:
-      - ROOT_URL=http://127.0.0.1
-      # TODO: Соединить с mail-server
-      # - MAIL_URL=smtp://
+      - ROOT_URL=http://messenger.defntvdm.ru
     ports:
       - '80:3000'
     depends_on:
