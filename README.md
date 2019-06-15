@@ -12,7 +12,7 @@
 
 ## Cхема сети
 
-![image](SOPKA.png)
+![image](https://raw.githubusercontent.com/dimastark/provider-tasks/master/SOPKA.png)
 
 ## Первоначальная настройка
 
@@ -50,6 +50,7 @@
 2. Авторизуемся **user** пароль **12345678**
 3. Открываем один из **arm** и пытаемся сделать **sudo ald-client join server.domain**
 4. Пользователи: **irina** / **dima** / **semen** пароль **12345678**
+5. В случае ошибки **Revoke credentials**, стоит поменять пароль в домене
 
 ### dns
 
